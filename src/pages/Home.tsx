@@ -1,19 +1,22 @@
 //import React from 'react';
 //import logo from './logo.svg';
-import './Home.css';
-import movies from './data/movies.json';
+import homeStyles from '../styles/Home.module.css';
+import movies from '../data/movies.json';
+import Header from '../components/Header';
 
 function Home() {
   return <>
-          <header className='header'>Movies App</header>
-          <main className='main'>
-            <div className='container'>
+          <Header/>
+          <main className={homeStyles.main}>
+            <div className={homeStyles.container}>
               {movies.map((movie) => (
-              <div className='movie' key={movie.imdbID}>
-                <img className='poster' src={movie.Images[1]} alt={movie.Title} />
-                <div className='title'>{movie.Title}</div>
+              <div className={homeStyles.movie} key={movie.imdbID}>
+                <img className={homeStyles.poster} src={movie.Images[1]} alt={movie.Title} />
+                <div className={homeStyles.title}>{movie.Title}</div>
               </div>
               ))}
+
+              
               {/*
               <ul className='movie-list'>
               {movies.map((movie) => (
