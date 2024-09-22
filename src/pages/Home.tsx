@@ -11,23 +11,27 @@ function Home() {
           <Header/>
           <main className={homeStyles.main}>
             <div className={homeStyles.container}>
-              {movies.map((movie) => (
+            
+            {/*}  {movies.map((movie) => (
                 <Link to={'/details/${movie.imdbID}'}>
                 <PostCard key={movie.imdbID} imdbID={movie.imdbID} Images={movie.Images} Title={movie.Title} />
                 </Link>
 
-              ))}
+              ))} */}
 
               
-              {/*
-              <ul className='movie-list'>
+              
+            <ul className='movie-list'>
               {movies.map((movie) => (
                 <li className='movie' key={movie.imdbID}>
-                  <div className='title'>{movie.Title}</div>
+                  <Link to={`/details/${movie.imdbID}`}>
+                    <div className='title'>{movie.Title}</div>
+                  </Link>
                 </li>
               ))}
             </ul>
-            */}
+
+            
             </div>
 
           </main>
