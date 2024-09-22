@@ -4,13 +4,33 @@ import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
+import Details from './pages/Details';
+import ErrorPage from './pages/errerPage';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home /> ,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/details/:detailId",
+    element: <Details /> ,
+    errorElement: <ErrorPage />,
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Home />
+    <RouterProvider router={router} />
+    {/* <Home /> */}
   </React.StrictMode>
 );
 

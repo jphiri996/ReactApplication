@@ -4,6 +4,7 @@ import homeStyles from '../styles/Home.module.css';
 import movies from '../data/movies.json';
 import Header from '../components/Header';
 import PostCard from '../components/PostCard';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return <>
@@ -11,7 +12,9 @@ function Home() {
           <main className={homeStyles.main}>
             <div className={homeStyles.container}>
               {movies.map((movie) => (
+                <Link to={'/details/${movie.imdbID}'}>
                 <PostCard key={movie.imdbID} imdbID={movie.imdbID} Images={movie.Images} Title={movie.Title} />
+                </Link>
 
               ))}
 
