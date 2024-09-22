@@ -3,6 +3,7 @@
 import homeStyles from '../styles/Home.module.css';
 import movies from '../data/movies.json';
 import Header from '../components/Header';
+import PostCard from '../components/PostCard';
 
 function Home() {
   return <>
@@ -10,10 +11,8 @@ function Home() {
           <main className={homeStyles.main}>
             <div className={homeStyles.container}>
               {movies.map((movie) => (
-              <div className={homeStyles.movie} key={movie.imdbID}>
-                <img className={homeStyles.poster} src={movie.Images[1]} alt={movie.Title} />
-                <div className={homeStyles.title}>{movie.Title}</div>
-              </div>
+                <PostCard key={movie.imdbID} imdbID={movie.imdbID} Images={movie.Images} Title={movie.Title} />
+
               ))}
 
               
@@ -34,3 +33,5 @@ function Home() {
 }
 
 export default Home;
+
+

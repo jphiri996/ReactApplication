@@ -15,11 +15,18 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
     width: 90%;
     max-width: 1200px;
     margin: 2rem auto;
+    text-align: center;
+    
+}
+
+.detailsDescription {
+    margin-top: 20px;
+
 }
 
 .movie {
@@ -44,5 +51,6 @@
 }
 
 img {
-    width: 100;
+    width: 100%;
+    max-width: 600px;
 }
